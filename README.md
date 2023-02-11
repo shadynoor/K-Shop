@@ -10,7 +10,7 @@ This is a sample e-Commerce test.
 4. Auto login after closing browser
 5. Auth-Guard
 
-## Development server
+## To Preview K-Shop
 
 1. Run `npm install` to install node modules.
 
