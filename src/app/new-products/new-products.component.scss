@@ -1,0 +1,47 @@
+@import '../../styles.scss';
+
+h4{
+  color: #23104E;
+  // width: 250px !important;
+}
+hr{
+  height: 1px;
+  background-color: #23104E;
+  width: 100%;
+}
+@media (min-width:425px) {
+  .btn{
+    width: 170px;
+  }
+  h4{
+    width: 200px;
+  }
+}
+@media (max-width:425px) {
+  hr{
+    display: none;
+  }
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(200px , 1fr));
+  gap: 50px;
+  justify-content: center;
+}
+@media (max-width:1200px) {
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(170px , 1fr));
+    justify-content: center;
+  }
+}
+@media (max-width:500px) {
+  .grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+

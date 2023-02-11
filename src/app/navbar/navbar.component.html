@@ -1,0 +1,79 @@
+<nav class="navbar fixed-top bg-white" style="z-index: 2;">
+  <div class="container-fluid px-5">
+    <div class="main-nav d-flex justify-content-between align-items-center w-100">
+      <div class="brand" routerLink="home" style="cursor: pointer;">
+        <img src="assets/images/Path 224.svg" alt="">
+      </div>
+      <div class="search flex-fill me-5 ms-3">
+        <form class="" role="search">
+          <input class="form-control" type="search" placeholder="عم تبحث؟" #searchInput>
+        </form>
+        <span (click)="search()" class="position-absolute button"><i class="fa-solid fa-magnifying-glass"></i></span>
+      </div>
+      <div class="d-flex justify-content-between align-items-center smallSearchNav">
+
+        <a (click)="smallScreenSearch()" class="button px-3 small-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a routerLink="auth" *ngIf="!isAuth" class="button px-3 me-3">
+          <i class="fa-solid fa-user"></i>
+        </a>
+        <a *ngIf="isAuth" class="button px-3 me-3"  routerLink="/auth" (click)="logout()">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </a>
+
+        <a routerLink="cart" class="button w-100 me-3 px-3">
+          <span class="ms-2">سلة التسوق </span> <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+<nav class="navbar forToggle navbar-expand-md" style="margin-top: 60px; margin-bottom: 0;">
+
+  <div class="container-fluid p-0">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="headers collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            الأقسام
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><button class="dropdown-item" href="#">قسم الملابس</button></li>
+            <li><button class="dropdown-item" href="#">قسم الموبايلات</button></li>
+            <li><button class="dropdown-item" href="#">قسم الاكسسوارات</button></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="home" routerLinkActive="active">الرئيسية</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">قائمة الأمنيات</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">تواصل معنا</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">من نحن</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+
+</nav>
+
+
+<div class="small-search-screen" #smallSearch (click)="closeSearch($event)">
+  <div class="position-relative w-75" #searchDiv>
+    <input type="text" id="input-search" class="form-control" placeholder="عم تبحث؟" #searchInput2>
+    <span (click)="search()" class="position-absolute button"><i class="fa-solid fa-magnifying-glass"></i></span>
+  </div>
+</div>

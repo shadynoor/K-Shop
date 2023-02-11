@@ -1,0 +1,9 @@
+<div class="d-flex justify-content-between align-items-center mt-5 mb-4">
+  <h5 class="me-3">
+    منتجات تصفحتها مؤخرا
+  </h5>
+</div>
+
+<div>
+  <app-recently-viewed-product [product]="product" *ngFor="let product of recentlyViewed"></app-recently-viewed-product>
+</div>

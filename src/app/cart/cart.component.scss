@@ -1,0 +1,44 @@
+.container{
+  min-height: 67vh;
+}
+.title{
+  font-size: 15px;
+  font-weight: bold;
+  color: #23104E;
+}
+.cart-row{
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.p-in-cart{
+  color: #23104E;
+}
+h1{
+  color: #23104E;
+  margin: 20px 0;
+}
+.btn-outline-success{
+  border: 1px solid #23104E !important;
+  color: #23104E;
+}
+.btn-outline-success:hover , .btn-outline-success:focus{
+  color: var(--bs-btn-hover-color);
+  background-color: #23104E !important;
+  border-color: #23104E;
+}
+.col-3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width:506px) {
+  .btn-outline-danger , .btn-danger{
+    font-size: 10px;
+  }
+  .title{
+    font-size: 10px;
+  }
+}

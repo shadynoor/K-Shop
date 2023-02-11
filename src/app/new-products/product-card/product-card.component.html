@@ -1,0 +1,37 @@
+<div class="card position-relative bg-white" style="width:15rem;">
+  <div>
+    <span class="badge rounded-pill state position-absolute" *ngIf="product.state == 'new'">جديد</span>
+    <span class="badge rounded-pill state state2 position-absolute" *ngIf="product.state == 'offer'">عرض</span>
+    <span class="position-absolute compare">
+      <img src="../../../assets/images/compare_arrows_black_24dp.png" alt="">
+    </span>
+    <div class="position-absolute compare-text">
+      أضف للمقارنة
+    </div>
+
+    <img [src]="product.img" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{product.title | slice:28}}</h5>
+      <div class="c-body">
+        <p class="card-text mb-1 mt-2">
+          <ng-container *ngFor="let _ of [].constructor(product.rate)">
+            <i class="fa-solid fa-star filled"></i>
+          </ng-container>
+          <ng-container *ngFor="let _ of [].constructor(5-product.rate)">
+            <i class="fa-solid fa-star empty"></i>
+          </ng-container>
+        </p>
+          <p class="on-sale text-muted" *ngIf="product.sale">{{product.oldPrice}} ج.م</p>
+          <p class="card-text price position-absolute">{{product.price}} ج.م</p>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center mb-2 ">
+    <button (click)="addToCart(product)" class="btn btn-primary me-2"><i class="fa-solid fa-cart-plus ms-2"></i>أضف للسلة</button>
+    <div class="icons">
+      <span><i class="fa-solid fa-share-nodes ms-3"></i></span>
+      <span *ngIf="!liked" (click)="likedProduct()"><i class="fa-regular fa-heart ms-3"></i></span>
+      <span *ngIf="liked" (click)="likedProduct()"><i class="fa-solid fa-heart ms-3" style="color:rgb(186, 13, 13);"></i></span>
+    </div>
+  </div>
+</div>

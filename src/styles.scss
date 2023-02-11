@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+
+$mainColor: #302CA2;
+$bgColor: #EFEEF8;
+
+*{
+  direction: rtl;
+  font-family: 'Cairo', sans-serif;
+}
+i{
+  font-family: "Font Awesome 6 Free";
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.button{
+  display: block;
+  background-color: $bgColor;
+  color: $mainColor;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+.state{
+  left: 10px;
+  top: 10px;
+  background-color: #23104E;
+  font-weight: 300;
+  font-size: 14px;
+}
+.state2{
+  background-color: #26A37C;
+}
+.badge{
+  --bs-badge-padding-x: 1em;
+  --bs-badge-padding-y: 0.55em;
+}
+.compare{
+  top: 5px;
+  right: 10px;
+}
+.compare-text{
+  top: -30px;
+  background-color: #23104E;
+  padding: .5em 1em;
+  color: white;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  visibility: hidden;
+  font-weight: 300;
+  font-size: 14px;
+}
+.compare:hover + .compare-text{
+  visibility: visible;
+}
+.price{
+  font-weight: bold;
+  color: #23104E;
+  bottom: 55px;
+}
+.btn-outline-primary{
+  border: 2px solid #302CA2;
+  font-weight: 600;
+  color: #302CA2;
+  // width: 250px !important;
+}
+.btn-outline-primary:hover{
+  background-color: #302CA2;
+  color: white;
+}

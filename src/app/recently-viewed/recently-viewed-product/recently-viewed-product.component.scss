@@ -1,0 +1,63 @@
+@import '../../../styles.scss';
+
+.recent-card{
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+
+}
+.c-body{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  max-height: 130px;
+}
+.state{
+  top: 0;
+}
+.fa-cart-plus{
+  color: $mainColor;
+}
+i{
+  cursor: pointer;
+}
+// .price{
+//   bottom: 15px;
+//   font-size: 13px;
+
+// }
+.on-sale{
+  text-decoration: line-through;
+}
+
+@media (max-width:1205px) {
+  .title{
+    font-size: 12px;
+  }
+  .badge{
+    --bs-badge-padding-x: .8em;
+    --bs-badge-padding-y: 0.35em;
+  }
+}
+@media (max-width:991px) {
+  .title{
+    font-size: 16px;
+  }
+  .state{
+    left: 40px;
+  }
+
+}
+@media (max-width:424px) {
+  .state{
+    left: auto;
+    right: 75px;
+  }
+  .title{
+    font-size: 14px;
+  }
+
+}

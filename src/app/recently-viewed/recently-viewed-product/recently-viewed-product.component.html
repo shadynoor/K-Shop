@@ -1,0 +1,33 @@
+
+<div class="row  my-2 position-relative bg-white recent-card">
+  <div class="col-5 position-relative d-flex justify-content-center">
+    <span class="badge rounded-pill state position-absolute" *ngIf="product.state == 'new'">جديد</span>
+    <span class="badge rounded-pill state state2 position-absolute" *ngIf="product.state == 'offer'">عرض</span>
+    <span class="position-absolute compare">
+      <img src="assets/images/compare_arrows_black_24dp.png" alt="">
+    </span>
+    <div class="position-absolute compare-text">
+      أضف للمقارنة
+    </div>
+    <img [src]="product.img" class="img-fluid" alt="">
+  </div>
+  <div class="col-7">
+    <div class="c-body">
+      <div>
+        <p class="title m-0">{{product.title | slice:18}}</p>
+        <p class="on-sale text-muted p-0 m-0" *ngIf="product.oldPrice">{{product.oldPrice}} ج.م</p>
+        <p class="price p-0 m-0">{{product.price}} ج.م</p>
+      </div>
+      <div>
+        <div class="d-flex justify-content-between align-items-center mb-1">
+          <i (click)="addToCart(product)" class="fa-solid fa-cart-plus ms-2"></i>
+          <div class="icons">
+            <span *ngIf="!liked" (click)="likedProduct()"><i class="fa-regular fa-heart ms-4"></i></span>
+            <span *ngIf="liked" (click)="likedProduct()"><i class="fa-solid fa-heart ms-4" style="color:rgb(186, 13, 13);"></i></span>
+            <span><i class="fa-solid fa-share-nodes"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

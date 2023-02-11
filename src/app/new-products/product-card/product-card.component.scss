@@ -1,0 +1,50 @@
+@import '../../../styles.scss';
+
+.card{
+  width: 100%;
+  border: none;
+  height: 400px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.btn-primary{
+  background-color: $mainColor;
+  border: none;
+  padding: 6px 10px 6px 30px;
+  font-weight: 400;
+  font-size: 14px;
+}
+.btn-primary:active{
+  background-color: $mainColor;
+}
+.icons{
+  color: #B7AECA;
+  font-size: 19px;
+}
+i{
+  cursor: pointer;
+}
+.filled{
+  color: #E4CF4B;
+}
+.empty{
+  color:#00000033 ;
+}
+.on-sale{
+  text-decoration: line-through;
+}
+.card-title{
+  font-size: 15px;
+}
+.c-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50px;
+}

@@ -1,0 +1,193 @@
+@import '../../styles.scss';
+.search{
+  position: relative;
+}
+.navbar{
+  height: 70px;
+}
+.search span{
+  top: 2.5px;
+  right: 2px;
+  color: $mainColor;
+  background-color: $bgColor;
+}
+input{
+  font-size: 12px;
+  height: 40px;
+  color: $mainColor;
+  background-color: $bgColor;
+  border: none;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  padding-right: 40px;
+}
+
+input:focus{
+  outline: 1px solid $mainColor;
+  box-shadow: none;
+  border-color: $mainColor;
+  background-color: $bgColor;
+}
+input:focus > .search .button{
+  background-color: white;
+}
+
+.search .button {
+  height: 35px;
+  width: 35px;
+}
+
+.button{
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+  color: $mainColor;
+}
+
+.headers{
+  background-color: $bgColor;
+  z-index: 100;
+}
+.headers a {
+  margin: 0 10px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $mainColor;
+}
+.dropdown-toggle::after{
+  border: none;
+}
+.dropdown-toggle::after{
+    font-family: "Font Awesome 6 Free";
+    content: "\f078";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    padding-right:10px ;
+    color: $mainColor;
+}
+.dropdown-menu{
+  background-color: $bgColor;
+  border-color: $mainColor;
+}
+.dropdown-item{
+  text-align: right;
+  background-color: $bgColor;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  color: white;
+  background-color: $mainColor
+}
+
+
+
+.small-search{
+  display: none;
+}
+nav{
+  z-index: 1;
+}
+.small-search-screen{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
+}
+.small-search-screen span{
+  top: 0;
+  right: 0;
+}
+.active{
+  background-color: #E0DFF1;
+  font-weight: bold;
+  padding: 0 20px !important;
+}
+.forToggle{
+  z-index: 1;
+}
+@media (max-width:767px) {
+  .button span{
+    display: none;
+  }
+  .forToggle{
+    z-index: 100;
+  }
+  .search{
+    display: none;
+  }
+  .container-fluid{
+    padding: 0 !important;
+  }
+  .main-nav{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .small-search{
+    display:flex
+  }
+  .dropdown-menu{
+    width: 95%;
+  }
+  .headers a{
+    justify-content: start;
+  }
+  .navbar-toggler{
+    position: fixed;
+    left: 10px;
+    top: 17px;
+    background-color: $bgColor;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .navbar-toggler:focus{
+    box-shadow: none;
+  }
+  .dropdown{
+    text-align: right;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-item{
+    width: 100%;
+  }
+
+  .smallSearchNav{
+    margin-left: 45px;
+  }
+}
+@media (max-width:424px) {
+  img{
+    width: 60px;
+  }
+  .smallSearchNav{
+    margin-left: 45px;
+  }
+
+}

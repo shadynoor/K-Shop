@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-9">
+      <h1>سلة التسوق</h1>
+      <p class="p-in-cart">لديك {{productsInCart.length}} منتجات في السلة</p>
+    </div>
+    <div class="col-3" *ngIf="productsInCart.length > 0">
+      <button class="btn btn-outline-danger" (click)="clearCart()">حذف السلة</button>
+    </div>
+  </div>
+  <div class="row py-3 d-flex align-items-center"  *ngIf="productsInCart.length > 0">
+    <div class="col-3">
+      <strong class="p-in-cart">صورة المنتج</strong>
+    </div>
+    <div class="col-3">
+      <strong class="p-in-cart">عنوان المنتج</strong>
+    </div>
+    <div class="col-3">
+      <strong class="p-in-cart">السعر</strong>
+    </div>
+    <div class="col-3"></div>
+    <hr class="mt-1">
+  </div>
+
+  <div class="row bg-white mb-3 py-3 d-flex align-items-center cart-row" *ngFor="let product of productsInCart; let i = index">
+    <div class="col-3">
+      <img class="img-fluid" [src]="product.img" alt="">
+    </div>
+    <div class="col-3">
+      <p class="title">{{product.title}}</p>
+    </div>
+    <div class="col-3">
+      <p class="price">{{product.price}}  ج.م</p>
+    </div>
+    <div class="col-3">
+      <button class="btn btn-danger" (click)="deleteProduct(i)">حذف المنتج</button>
+    </div>
+  </div>
+
+  <div class="row d-flex align-items-center"  *ngIf="productsInCart.length > 0">
+    <div class="col-md-9">
+      <div class="alert alert-success" role="alert" *ngIf="success">
+        تمت عملية الشراء بنجاح
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="d-flex align-items-center" style="flex-direction: column;">
+        <p><strong  class="p-in-cart">المبلغ الكلي : {{totalPrice()}} </strong></p>
+        <div class="d-flex align-items-center">
+          <button class="btn btn-outline-success ms-2" (click)="buyNow()">اشتري الان</button>
+          <div class="spinner-border" role="status" *ngIf="isLoading">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
