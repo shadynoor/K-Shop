@@ -3,7 +3,7 @@
     <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
   </div>
 
-  <div class="alert alert-danger w-50 m-auto my-3" *ngIf="error && !isLoading" >
+  <div class="alert alert-danger m-auto my-3" *ngIf="error && !isLoading" >
     {{ error }}
   </div>
 
@@ -16,7 +16,7 @@
         <label for="password" class="form-label mt-3">كلمة المرور</label>
         <input type="password" class="form-control" formControlName="password" name="password" id="password">
 
-        <button class="btn btn-outline-primary mt-4" type="submit" [disabled]="this.authForm.invalid">{{ isLogin ? 'تسجيل الدخول' : 'تسجيل حساب'}}</button>
+        <button class="btn btn-outline-primary mt-4 me-3" type="submit" [disabled]="this.authForm.invalid">{{ isLogin ? 'تسجيل الدخول' : 'تسجيل حساب'}}</button>
         <button class="btn btn-primary mt-4 me-3" type="button" (click)="onSwitchMode()">{{ !isLogin ? 'تسجيل الدخول' : 'تسجيل حساب'}}</button>
       </form>
     </div>

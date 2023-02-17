@@ -16,7 +16,7 @@
       <strong class="p-in-cart">عنوان المنتج</strong>
     </div>
     <div class="col-3">
-      <strong class="p-in-cart">السعر</strong>
+      <strong class="p-in-cart">الكمية x السعر</strong>
     </div>
     <div class="col-3"></div>
     <hr class="mt-1">
@@ -30,7 +30,7 @@
       <p class="title">{{product.title}}</p>
     </div>
     <div class="col-3">
-      <p class="price">{{product.price}}  ج.م</p>
+      <p class="price">{{product.qty}} * {{ product.price}} = {{product.qty! * product.price}}  ج.م</p>
     </div>
     <div class="col-3">
       <button class="btn btn-danger" (click)="deleteProduct(i)">حذف المنتج</button>
@@ -39,8 +39,8 @@
 
   <div class="row d-flex align-items-center"  *ngIf="productsInCart.length > 0">
     <div class="col-md-9">
-      <div class="alert alert-success" role="alert" *ngIf="success">
-        تمت عملية الشراء بنجاح
+      <div class="alert" [ngClass]="isUser ? 'alert-success' : 'alert-danger'" role="alert" *ngIf="success || !isUser">
+        {{isUser ? 'تمت عملية الشراء بنجاح' : 'يجب عليك تسجيل الدخول لاتمام عملية الشراء'}}
       </div>
     </div>
     <div class="col-md-3">
@@ -48,13 +48,13 @@
         <p><strong  class="p-in-cart">المبلغ الكلي : {{totalPrice()}} </strong></p>
         <div class="d-flex align-items-center">
           <button class="btn btn-outline-success ms-2" (click)="buyNow()">اشتري الان</button>
+
           <div class="spinner-border" role="status" *ngIf="isLoading">
             <span class="visually-hidden">Loading...</span>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 
 </div>

@@ -13,7 +13,7 @@ export class AuthComponent implements OnInit {
 
   isLogin = true
   isLoading = false
-  error = null
+  error:any = null
 
   authForm = new FormGroup({
     email: new FormControl('' , [Validators.required]),
@@ -37,7 +37,6 @@ export class AuthComponent implements OnInit {
     if (this.isLogin) {
       this.isLoading = true
       authObs = this.authService.login(email,password)
-
     }else{
       this.isLoading = true
       authObs = this.authService.signUp(email,password)
@@ -52,7 +51,25 @@ export class AuthComponent implements OnInit {
 
     },error => {
       this.isLoading = false
-      this.error = (error.error.error.message);
+      switch (error.error.error.message) {
+        case "EMAIL_NOT_FOUND":
+        this.error = 'هذا البريد غير مسجل مسبقا'
+          break;
+        case "INVALID_PASSWORD":
+          this.error = 'كلمة المرور غير صحيحة'
+            break;
+        case "EMAIL_EXISTS":
+          this.error = 'هذا البريد الالكتروني مستخدم بالفعل'
+            break;
+        case "INVALID_EMAIL":
+          this.error = 'البريد الالكتروني غير صحيح'
+            break;
+        default:
+          this.error = error.error.error.message
+          break;
+      }
+      console.log(error);
+
     })
   }
 

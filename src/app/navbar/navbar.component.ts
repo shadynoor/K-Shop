@@ -46,7 +46,7 @@ export class NavbarComponent implements OnInit {
   }
   smallScreenSearch(){
     this.smallSearch.nativeElement.style.visibility = 'visible'
-    this.smallSearch.nativeElement.style.opacity = '.9'
+    this.smallSearch.nativeElement.style.opacity = '.95'
   }
 
   closeSearch(event:any){

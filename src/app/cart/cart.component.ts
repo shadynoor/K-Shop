@@ -11,6 +11,7 @@ export class CartComponent implements OnInit {
 
   success!:boolean
   isLoading = false
+  isUser = true
 
   productsInCart:Product[] = []
 
@@ -27,7 +28,8 @@ export class CartComponent implements OnInit {
   totalPrice(){
     let sum = 0
     for (let i = 0; i < this.productsInCart.length; i++) {
-      sum += this.productsInCart[i].price
+      let priceQty = this.productsInCart[i].price * this.productsInCart[i].qty!
+      sum += priceQty
     }
     return sum
   }
@@ -38,13 +40,19 @@ export class CartComponent implements OnInit {
   }
 
   buyNow(){
-    if (!this.success) {
-      this.isLoading = true
-      setTimeout(() => {
-        this.success = true
-        this.isLoading = false
-      }, 500);
+    if ('userData' in localStorage) {
+      if (!this.success) {
+        this.isLoading = true
+        setTimeout(() => {
+          this.success = true
+          this.isLoading = false
+        }, 500);
+      }
+    }else{
+      this.isUser = false
+
     }
+
   }
 
 
