@@ -20,13 +20,14 @@ export class NavbarComponent implements OnInit {
   constructor(private authService:AuthService) { }
 
   ngOnInit(): void {
+    this.authService.autoLogin()
     this.authService.user.subscribe((user) => {
       this.isAuth = !!user
     })
 
-    if(localStorage.getItem('userData')){
-      this.isAuth = true
-    }
+    // if(localStorage.getItem('userData')){
+    //   this.isAuth = !this.isAuth
+    // }
   }
 
 
@@ -34,8 +35,8 @@ export class NavbarComponent implements OnInit {
     let input = this.searchInput.nativeElement
     let input2 = this.searchInput2.nativeElement
 
-    if (input?.value) {
-      console.log(input.value);
+    if (input?.value || input2?.value) {
+      console.log(input.value || input2.value);
     }else{
       if (window.innerWidth < 767) {
         input2.focus()

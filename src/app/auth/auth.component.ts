@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -21,6 +21,7 @@ export class AuthComponent implements OnInit {
   })
 
   constructor(private authService:AuthService , private router:Router) { }
+
 
   ngOnInit(): void {
   }
