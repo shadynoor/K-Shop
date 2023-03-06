@@ -5,5 +5,7 @@ export interface Product {
   price:number,
   oldPrice?:number,
   rate:number,
-  img:string
+  img:string,
+  qty?:number,
+  id:number
 }

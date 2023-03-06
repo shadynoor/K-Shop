@@ -4,12 +4,14 @@ import { AuthComponent } from './auth/auth.component';
 import { CartComponent } from './cart/cart.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './services/auth.guard';
+import { WishlistComponent } from './wishlist/wishlist/wishlist.component';
 
 const routes: Routes = [
   {path:'' , redirectTo:'home' , pathMatch:'full'},
   {path:'home' , component:HomeComponent},
   {path:'auth' , component:AuthComponent , canActivate:[AuthGuard]},
   {path:'cart' , component:CartComponent},
+  {path:'wishlist' , component:WishlistComponent},
   {path:'**' , redirectTo:'home' , pathMatch:'full'}
 ];
 

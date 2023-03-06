@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/interfaces/product';
 import { CartService } from 'src/app/services/cart.service';
+import { WishingService } from 'src/app/services/wishing.service';
 
 @Component({
   selector: 'app-product-card',
@@ -14,7 +15,7 @@ export class ProductCardComponent implements OnInit {
 
   @Input() product!:Product
 
-  constructor(private cartService:CartService) { }
+  constructor(private cartService:CartService , private wishlistService:WishingService) { }
 
   ngOnInit(): void {
   }
@@ -29,6 +30,15 @@ export class ProductCardComponent implements OnInit {
 
   addToCart(product:Product){
     this.cartService.addToCart(product)
+  }
+
+  addToWishList(product:Product){
+    this.liked = true
+    this.wishlistService.addToWishList(product)
+  }
+
+  removeFromWishList(index:number){
+    this.wishlistService.deleteProductFromWishList(index)
   }
 
 }

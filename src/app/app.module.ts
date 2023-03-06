@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
 import { AuthComponent } from './auth/auth.component';
 import { HttpClientModule } from '@angular/common/http';
+import { WishlistModule } from './wishlist/wishlist.module';
 
 @NgModule({
   declarations: [
@@ -30,14 +31,15 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     HomeComponent,
     CartComponent,
-    AuthComponent
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    WishlistModule
   ],
   providers: [],
   bootstrap: [AppComponent]

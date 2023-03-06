@@ -30,8 +30,7 @@
     <button (click)="addToCart(product)" class="btn btn-primary me-2"><i class="fa-solid fa-cart-plus ms-2"></i>أضف للسلة</button>
     <div class="icons">
       <span><i class="fa-solid fa-share-nodes ms-3"></i></span>
-      <span *ngIf="!liked" (click)="likedProduct()"><i class="fa-regular fa-heart ms-3"></i></span>
-      <span *ngIf="liked" (click)="likedProduct()"><i class="fa-solid fa-heart ms-3" style="color:rgb(186, 13, 13);"></i></span>
+      <span (click)="addToWishList(product)"><i class="fa-solid fa-heart ms-3" [ngClass]="{'redColor' : liked}"  ></i></span>
     </div>
   </div>
 </div>

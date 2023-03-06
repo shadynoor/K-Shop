@@ -20,6 +20,7 @@ export class NavbarComponent implements OnInit {
   constructor(private authService:AuthService) { }
 
   ngOnInit(): void {
+    this.authService.autoLogin()
     this.authService.user.subscribe((user) => {
       this.isAuth = !!user
     })
@@ -46,7 +47,7 @@ export class NavbarComponent implements OnInit {
   }
   smallScreenSearch(){
     this.smallSearch.nativeElement.style.visibility = 'visible'
-    this.smallSearch.nativeElement.style.opacity = '.9'
+    this.smallSearch.nativeElement.style.opacity = '.95'
   }
 
   closeSearch(event:any){
