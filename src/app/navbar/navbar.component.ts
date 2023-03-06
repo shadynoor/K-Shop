@@ -20,14 +20,13 @@ export class NavbarComponent implements OnInit {
   constructor(private authService:AuthService) { }
 
   ngOnInit(): void {
-    this.authService.autoLogin()
     this.authService.user.subscribe((user) => {
       this.isAuth = !!user
     })
 
-    // if(localStorage.getItem('userData')){
-    //   this.isAuth = !this.isAuth
-    // }
+    if(localStorage.getItem('userData')){
+      this.isAuth = true
+    }
   }
 
 
@@ -35,8 +34,8 @@ export class NavbarComponent implements OnInit {
     let input = this.searchInput.nativeElement
     let input2 = this.searchInput2.nativeElement
 
-    if (input?.value || input2?.value) {
-      console.log(input.value || input2.value);
+    if (input?.value) {
+      console.log(input.value);
     }else{
       if (window.innerWidth < 767) {
         input2.focus()
@@ -47,7 +46,7 @@ export class NavbarComponent implements OnInit {
   }
   smallScreenSearch(){
     this.smallSearch.nativeElement.style.visibility = 'visible'
-    this.smallSearch.nativeElement.style.opacity = '.95'
+    this.smallSearch.nativeElement.style.opacity = '.9'
   }
 
   closeSearch(event:any){

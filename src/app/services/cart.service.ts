@@ -8,23 +8,11 @@ export class CartService {
 
   cart:Product[] = []
 
+
   addToCart(product:Product){
-    product.qty = 1
-    if ("cart" in localStorage) {
-      this.cart = JSON.parse(localStorage.getItem('cart') || "[]")
-      let exist = this.cart.find(elem => elem.id == product.id)
-      if (exist) {
-        exist.qty! += product.qty
-        this.cart[this.cart.indexOf(exist)] = exist
-        localStorage.setItem('cart',JSON.stringify(this.cart))
-      }else{
-        this.cart.push(product)
-        localStorage.setItem('cart',JSON.stringify(this.cart))
-      }
-    }else{
-      this.cart.push(product)
-      localStorage.setItem('cart',JSON.stringify(this.cart))
-    }
+    this.cart = JSON.parse(localStorage.getItem('cart') || '[]')
+    this.cart.push(product)
+    localStorage.setItem('cart' , JSON.stringify(this.cart))
   }
 
   getProductsFromCart(){

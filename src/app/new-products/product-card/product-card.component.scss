@@ -22,16 +22,6 @@
 }
 .btn-primary:active{
   background-color: $mainColor;
-  transform: scale(1.05);
-  transition: .3s;
-  -webkit-transform: scale(1.05);
-  -moz-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  -o-transform: scale(1.05);
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -ms-transition: .3s;
-  -o-transition: .3s;
 }
 .icons{
   color: #B7AECA;
