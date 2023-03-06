@@ -6,11 +6,11 @@ This is a sample e-Commerce test.
 
 1. Fully Responsive
 2. Can add products in shopping cart 
-3. Can Signup or Login
+3. Can Signup or Login using Firebase as a backend
 4. Auto login after closing browser
 5. Auth-Guard
 
-## Development server
+## To Preview K-Shop
 
 1. Run `npm install` to install node modules.
 
